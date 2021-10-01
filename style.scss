@@ -1,0 +1,119 @@
+* {
+  box-sizing: border-box;
+  font-family: sans-serif;
+  margin: 0;
+  outline: none;
+}
+
+.button {
+  border: 0;
+  padding: 5px;
+  border-radius: 3px;
+  background-color: transparent;
+  display: block;
+  cursor: pointer;
+}
+.background {
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  background: {
+    image: url(./font/images/main-bg.jpg);
+    size: cover;
+    position: center;
+    repeat: no-repeat;
+  }
+
+  .wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    
+    .column {
+      width: 23%;
+      background-color: #ebecf0;
+      padding: 5px;
+      border-radius: 6px;
+      position: relative;
+      margin:1%;
+      height: fit-content ;
+      .close-column {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        font-size: 20px;
+        transition-duration: 0.6s;
+        &:hover {
+          transform: scale(1.2);
+        }
+      }
+      .title {
+        font: {
+          size: 20px;
+          weight: bold;
+        }
+        margin-bottom: 10px;
+      }
+      .task-box {
+        background-color: white;
+        padding: 5px;
+        position: relative;
+        overflow: hidden;
+        margin: 5px 0;
+        border-radius: 5px;
+        &:hover {
+          .action-box {
+            right: 5px;
+          }
+        }
+        
+        .action-box {
+          position: absolute;
+          top: 5px;
+          right: -50px;
+          display: flex;
+          transition-duration: 0.5s;
+
+          .edit {
+            padding: 2px 5px;
+            color: green;
+            transition-duration: 0.6s;
+            &:hover {
+              transform: scale(1.2);
+            }
+          }
+          .delete {
+            padding: 2px 5px;
+            color: red;
+            transition-duration: 0.6s;
+
+            &:hover {
+              transform: scale(1.2);
+            }
+          }
+        }
+      }
+      .add-new-task-box {
+        display: flex;
+        background-color: white;
+        border: 1px solid #ffbf2b;
+        border-radius: 4px;
+        justify-content: space-between;
+
+        .task-input {
+          display: block;
+          width: calc(100% - 50px) !important;
+          border: none;
+          padding:  5px;
+          border-radius: 5px;
+         
+          
+        }
+
+        .add-task {
+          background-color:#ffbf2b;
+          width: 50px;
+        }
+      }
+    }
+  }
+}
